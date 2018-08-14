@@ -7,9 +7,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // Fill the editor with some raw markdown
       rawInput: '# Marked in browser\n\nRendered by **marked**.\n\n1. Ordered list item\n\n\n* Unordered List item',
       markdownOutput: ''
     };
+
     this.handleChange = this.handleChange.bind(this);
     this.convertMarkdown = this.convertMarkdown.bind(this);
   }
@@ -29,11 +31,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <textarea id='input' onChange={this.handleChange}>
-          {this.state.rawInput}
-        </textarea>
-        <div id='output' dangerouslySetInnerHTML={this.convertMarkdown()}>
+      <div className='App'>
+        <h1 className='App__title'>Markdown Previewer</h1>
+        <div className='App__io'>
+
+          <div className='App__editor'>
+            <h2 className='App__editor-title'>Editor</h2>
+            <textarea id='input' onChange={this.handleChange} value={this.state.rawInput}></textarea>
+          </div>
+
+          <div className='App__previewer'>
+            <h2 className='App__previewer-title'>Previewer</h2>
+            <div id='output' dangerouslySetInnerHTML={this.convertMarkdown()}></div>
+          </div>
+
         </div>
       </div>
     );
