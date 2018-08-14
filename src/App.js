@@ -8,7 +8,68 @@ class App extends React.Component {
     super(props);
     this.state = {
       // Fill the editor with some raw markdown
-      rawInput: '# Marked in browser\n\nRendered by **marked**.\n\n1. Ordered list item\n\n\n* Unordered List item',
+      rawInput: `
+# Hello world!
+
+## Here's a convenient markdown previewer!
+### Use it to help format your repo's README
+###### * Here are some examples of how format markdown
+
+Inline code works by using a single \`backtick\`.
+
+Multiline code works by using triple backticks:
+
+\`\`\`
+let x = 1;
+let y = 2;
+
+console.log("The values before swapping are:")
+console.log(\`X: \${x}\`);
+console.log(\`Y: \${y}\`);
+
+[x, y] = [y, x];
+
+console.log("The values after swapping are:")
+console.log(\`X: \${x}\`);
+console.log(\`Y: \${y}\`);
+\`\`\`
+
+Horizontal rules are made by using 3 asterisks, hyphens or underscores in a row
+
+---
+
+**Bold** text
+
+*Italic* text
+
+Maybe ***both***?
+
+The quick brown fox jumps over the ~~lazy~~ dog. Waittttt a second....
+
+[Donald Knuth's Famous Quote:](https://en.wikiquote.org/wiki/Donald_Knuth#Computer_Programming_as_an_Art_(1974))
+
+> *Premature optimization is the root of all evil*
+
+Need some tabular data? Markdown has your back:
+
+Column 1  | Column 2  | Column 3
+------------ | ------------- | -------------
+Row 1 | Lorem ipsum dolor sit amet, | consectetur adipiscing elit
+Row 2 | Lorem ipsum dolor sit amet, | consectetur adipiscing elit
+
+- To do list
+  - Monday
+    1. Drink Coffee
+    - ???
+    - **Profit**
+
+
+#### But for real... [Success boiled down in to 3 steps](https://www.forbes.com/sites/levelup/2017/01/04/3-keys-to-success-from-young-business-leaders/#6b2b500d7af4):
+1. Put in the work
+- Persist through low times
+* Take pride in your work
+
+![React Logo w/ Text](https://goo.gl/Umyytc)`,
       markdownOutput: ''
     };
 
