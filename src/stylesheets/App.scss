@@ -1,3 +1,93 @@
 .App {
-  color: blue;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  padding-bottom: 10px;
+  width: 100%;
+
+  // editor & previewer
+  &__io {
+    max-height: calc(100vh - 89px);
+    display: flex;
+    flex: 1 1;
+  }
+
+  // titles have to be centered
+  &__title, &__editor-title, &__previewer-title {
+    text-align: center;
+  }
+
+  // give the editor and previewer titles some extra styles
+  &__editor-title, &__previewer-title {
+    background-color: #00a2aa;
+    color: black;
+    margin: 0;
+    padding: 7px 0;
+  }
+
+  &__editor, &__previewer {
+    background-color: white;
+    color: #222;
+    box-shadow: 1px 1px 4px 1px #aaa;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0 10px 0 10px;
+  }
+
+  &__previewer {
+    flex-shrink: 1;
+  }
+}
+
+#input, #output {
+  border: none;
+  flex: 1 1;
+  padding: 0 10px 10px 10px;
+
+  @media (min-width: 960px) {
+    padding: 0 20px 20px 20px;
+  }
+}
+
+#input {
+  font-size: 16px;
+  padding-top: 16px;
+}
+
+#output {
+  overflow-y: scroll;
+
+  h1, h2 {
+    border-bottom: 1px solid #ccc;
+  }
+
+  h6 {
+    color: #444;
+  }
+
+  pre, code {
+    background-color: #f0f0f0;
+    color: black;
+  }
+
+  a {
+    color: blue;
+  }
+
+  blockquote {
+    border-left: 3px solid #444;
+    color: #444;
+    padding-left: 4px;
+  }
+
+  hr {
+    border: 2px solid #ccc;
+  }
+
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+  }
 }
